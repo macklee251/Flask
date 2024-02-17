@@ -1,12 +1,34 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}This is an example page{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrando o HTML ao Flask</title>
+</head>
 
-{% block content %}
-  <h1>Hello, Bootstrap</h1>
-{% endblock %}
+<body>
+
+  <ol>
+    {% for fruta in frutas %}
+    <li>{{fruta}}</h1>
+      {% endfor %}
+  </ol>
+
+  <ol>
+    {% for chave, valor in alunos.items() %}
+    <li>{{chave}}: {{valor}}</h1>
+      {% endfor %}
+  </ol>
+
+    {% for chave, valor in alunos.items() %}
+      <details>
+        <summary>{{chave}}</summary>
+        <p>{{valor}}</p>
+      </details>
+    {% endfor %}
+
+
+</body>
+
+</html>
