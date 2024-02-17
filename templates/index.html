@@ -21,12 +21,46 @@
       {% endfor %}
   </ol>
 
-    {% for chave, valor in alunos.items() %}
-      <details>
-        <summary>{{chave}}</summary>
-        <p>{{valor}}</p>
-      </details>
-    {% endfor %}
+  {% for chave, valor in alunos.items() %}
+  <details>
+    <summary>{{chave}}</summary>
+    <p>{{valor}}</p>
+  </details>
+  {% endfor %}
+
+
+  <h1 style="font-size: 20px; text-align: center;">Lista de nomes</h1>
+
+  <form action="{{url_for('index')}}" method="POST">
+    <label for="">Nome:</label>
+    <input type="text" name="nome">
+    <button>Adicionar</button>
+  </form>
+
+  <ul>
+    {% for nome in nomes %}
+    <li>
+      {{nome}}
+    </li>
+    {% endfor%}
+  </ul>
+
+
+  <h1 style="font-size: 20px; text-align: center;">Nota aluno</h1>
+  <form action="{{url_for('index')}}" method="POST">
+    <label for="">Nome:</label>
+    <input type="text" name="nome_aluno" required>
+    <label for="">Nota:</label>
+    <input type="text" name="nota_aluno" required>
+    <button>Adicionar</button>
+
+  </form>
+
+  <ol>
+    {% for registro in registros %}
+    <li>{{registro}}</h1>
+      {% endfor %}
+  </ol>
 
 
 </body>
