@@ -26,4 +26,4 @@ def index():
                            registros=registros)
 
 
-app.run(host=host, port=port) 
+app.run(host=host, port=port, debug=True) 
