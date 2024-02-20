@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<ol>
+  {% for fruta in frutas %}
+  <li>{{fruta}}</h1>
+    {% endfor %}
+</ol>
+
+<ol>
+  {% for chave, valor in alunos.items() %}
+  <li>{{chave}}: {{valor}}</h1>
+    {% endfor %}
+</ol>
+
+{% for chave, valor in alunos.items() %}
+<details>
+  <summary>{{chave}}</summary>
+  <p>{{valor}}</p>
+</details>
+{% endfor %}
+
+
+<h1 style="font-size: 20px; text-align: center;">Lista de nomes</h1>
+
+<form action="{{url_for('principal')}}" method="POST">
+  <div class="form-group">
+    <label for="seu_nome">Nome:</label>
+    <input type="text" name="nome" class="form-control" id="seu_nome" placeholder="Digite seu nome">
+  </div>
+  <button class="btn btn-primary">Adicionar</button>
+</form>
+
+<ul class="list-group">
+  {% for nome in nomes %}
+  <li class="list-group-item">
+    {{nome}}
+  </li>
+  {% endfor%}
+</ul>
+
+
+<h1 style="font-size: 20px; text-align: center;">Nota aluno</h1>
+<form action="{{url_for('principal')}}" method="POST">
+  <label for="">Nome:</label>
+  <input type="text" name="nome_aluno" required>
+  <label for="">Nota:</label>
+  <input type="text" name="nota_aluno" required>
+  <button>Adicionar</button>
+
+</form>
+
+<ol>
+  {% for registro in registros %}
+  <li>{{registro}}</h1>
+    {% endfor %}
+</ol>
+
+{% endblock content %}

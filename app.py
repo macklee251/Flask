@@ -10,7 +10,7 @@ registros = []
 alunos = {'João': 8.5, 'Maria': 7.2, 'Pedro': 9.0, 'Ana': 6.8, 'Carlos': 8.9}
 nomes = []
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def principal():
     if request.method == 'POST':
         if request.form.get("nome"):
             nomes.append(request.form.get("nome"))
@@ -19,11 +19,14 @@ def index():
         if request.form.get("nome_aluno") and request.form.get("nota_aluno"):
             registros.append({"aluno":request.form.get("nome_aluno"), "nota":request.form.get("nota_aluno")})
     
-    return render_template('index.html', 
+    return render_template('principal.html', 
                            frutas=frutas, 
                            alunos=alunos, 
                            nomes=nomes,
                            registros=registros)
 
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
 
 app.run(host=host, port=port, debug=True) 
